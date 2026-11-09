@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="proyectoMDE_Python" nsURI="http://www.example.org/proyectoMDE_Python"
+    nsPrefix="proyectoMDE_Python">
+  <eClassifiers xsi:type="ecore:EClass" name="Programa">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instrucciones" upperBound="-1"
+        eType="#//Instruccion" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instruccion" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="linea" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclaracionAtributo" abstract="true"
+      interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclaracionAtributo" eSuperTypes="#//Instruccion">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inicial" eType="#//Expresion"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//TipoDato(enum)"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Impresion" eSuperTypes="#//Instruccion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="saltoLinea" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mensaje" lowerBound="1"
+        eType="#//Expresion" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Condicional" eSuperTypes="#//Instruccion">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entonces" lowerBound="1"
+        eType="#//Bloque" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condicion" lowerBound="1"
+        eType="#//Expresion" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sino" eType="#//Bloque"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expresion" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NewAbstractClass8" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Literal" eSuperTypes="#//Expresion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//TipoDato(enum)"
+        defaultValueLiteral="INTEGER"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operacion" eSuperTypes="#//Expresion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operador" eType="#//OP(enum)"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="izquierda" lowerBound="1"
+        eType="#//Expresion" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="derecha" lowerBound="1"
+        eType="#//Expresion" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Referencia" eSuperTypes="#//Expresion">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declaracion" lowerBound="1"
+        eType="#//DeclaracionAtributo.1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OP(enum)">
+    <eLiterals name="SUMA"/>
+    <eLiterals name="RESTA" value="1"/>
+    <eLiterals name="MULTIPLICACION" value="2"/>
+    <eLiterals name="DIVISION" value="3"/>
+    <eLiterals name="MAYOR" value="4"/>
+    <eLiterals name="MENOR" value="5"/>
+    <eLiterals name="IGUAL" value="6"/>
+    <eLiterals name="AND" value="7"/>
+    <eLiterals name="OR" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bloque">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instrucciones" upperBound="-1"
+        eType="#//Instruccion" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TipoDato(enum)">
+    <eLiterals name="INTEGER"/>
+    <eLiterals name="STRING" value="1"/>
+    <eLiterals name="BOOLEAN" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

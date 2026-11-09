@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/ProyectoMDE_Python/src-gen" creationIcons="false"
+    editDirectory="/ProyectoMDE_Python.edit/src-gen" editorDirectory="/ProyectoMDE_Python.editor/src-gen"
+    modelPluginID="ProyectoMDE_Python" modelName="ProyectoMDE_Python" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="25.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>proyectoMDE_Python.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="ProyectoMDE_Python" disposableProviderFactory="true" ecorePackage="proyectoMDE_Python.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="proyectoMDE_Python.ecore#//OP(enum)">
+      <genEnumLiterals ecoreEnumLiteral="proyectoMDE_Python.ecore#//OP(enum)/SUMA"/>
+      <genEnumLiterals ecoreEnumLiteral="proyectoMDE_Python.ecore#//OP(enum)/RESTA"/>
+      <genEnumLiterals ecoreEnumLiteral="proyectoMDE_Python.ecore#//OP(enum)/MULTIPLICACION"/>
+      <genEnumLiterals ecoreEnumLiteral="proyectoMDE_Python.ecore#//OP(enum)/DIVISION"/>
+      <genEnumLiterals ecoreEnumLiteral="proyectoMDE_Python.ecore#//OP(enum)/MAYOR"/>
+      <genEnumLiterals ecoreEnumLiteral="proyectoMDE_Python.ecore#//OP(enum)/MENOR"/>
+      <genEnumLiterals ecoreEnumLiteral="proyectoMDE_Python.ecore#//OP(enum)/IGUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="proyectoMDE_Python.ecore#//OP(enum)/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="proyectoMDE_Python.ecore#//OP(enum)/OR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="proyectoMDE_Python.ecore#//TipoDato(enum)">
+      <genEnumLiterals ecoreEnumLiteral="proyectoMDE_Python.ecore#//TipoDato(enum)/INTEGER"/>
+      <genEnumLiterals ecoreEnumLiteral="proyectoMDE_Python.ecore#//TipoDato(enum)/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="proyectoMDE_Python.ecore#//TipoDato(enum)/BOOLEAN"/>
+    </genEnums>
+    <genClasses ecoreClass="proyectoMDE_Python.ecore#//Programa">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proyectoMDE_Python.ecore#//Programa/nombre"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference proyectoMDE_Python.ecore#//Programa/instrucciones"/>
+    </genClasses>
+    <genClasses ecoreClass="proyectoMDE_Python.ecore#//Instruccion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proyectoMDE_Python.ecore#//Instruccion/linea"/>
+    </genClasses>
+    <genClasses ecoreClass="proyectoMDE_Python.ecore#//DeclaracionAtributo"/>
+    <genClasses ecoreClass="proyectoMDE_Python.ecore#//DeclaracionAtributo.1">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference proyectoMDE_Python.ecore#//DeclaracionAtributo.1/inicial"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proyectoMDE_Python.ecore#//DeclaracionAtributo.1/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proyectoMDE_Python.ecore#//DeclaracionAtributo.1/tipo"/>
+    </genClasses>
+    <genClasses ecoreClass="proyectoMDE_Python.ecore#//Impresion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proyectoMDE_Python.ecore#//Impresion/saltoLinea"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference proyectoMDE_Python.ecore#//Impresion/mensaje"/>
+    </genClasses>
+    <genClasses ecoreClass="proyectoMDE_Python.ecore#//Condicional">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference proyectoMDE_Python.ecore#//Condicional/entonces"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference proyectoMDE_Python.ecore#//Condicional/condicion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference proyectoMDE_Python.ecore#//Condicional/sino"/>
+    </genClasses>
+    <genClasses ecoreClass="proyectoMDE_Python.ecore#//Expresion"/>
+    <genClasses image="false" ecoreClass="proyectoMDE_Python.ecore#//NewAbstractClass8"/>
+    <genClasses ecoreClass="proyectoMDE_Python.ecore#//Literal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proyectoMDE_Python.ecore#//Literal/valor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proyectoMDE_Python.ecore#//Literal/tipo"/>
+    </genClasses>
+    <genClasses ecoreClass="proyectoMDE_Python.ecore#//Operacion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proyectoMDE_Python.ecore#//Operacion/operador"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference proyectoMDE_Python.ecore#//Operacion/izquierda"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference proyectoMDE_Python.ecore#//Operacion/derecha"/>
+    </genClasses>
+    <genClasses ecoreClass="proyectoMDE_Python.ecore#//Referencia">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference proyectoMDE_Python.ecore#//Referencia/declaracion"/>
+    </genClasses>
+    <genClasses ecoreClass="proyectoMDE_Python.ecore#//Bloque">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference proyectoMDE_Python.ecore#//Bloque/instrucciones"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
